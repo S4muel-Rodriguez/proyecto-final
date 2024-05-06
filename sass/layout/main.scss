@@ -1,0 +1,21 @@
+// Estilos de la barra lateral
+
+.intereses_aspiraciones{
+    text-align: center; /* Centra el contenido */
+}
+
+.intereses_aspiraciones p {
+    animation: fadeIn 1s ease; /* Animación de desvanecimiento */
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 0px; /* Espacio alrededor del texto */
+    margin: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Opacidad inicial */
+    }
+    to {
+        opacity: 1; /* Opacidad final */
+    }
+}

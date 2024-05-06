@@ -1,0 +1,458 @@
+body{
+    background-image: linear-gradient(to top ,white,grey );
+}
+
+// Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$bg-color: #f8f9fa;
+$navbar-bg: #0766c5;
+$nav-link-color: #7104d685;
+$nav-link-hover-color: #bc02eb;
+$transition-duration: 4ms;
+
+// Mixins
+@mixin transition($property: all) {
+  transition: $property $transition-duration ease-in-out;
+}
+
+// Extend
+%nav-link {
+  color: $nav-link-color;
+  @include transition(color);
+  &:hover {
+    color: $nav-link-hover-color;
+  }
+}
+
+// Styles
+.navbar {
+  background-color: $navbar-bg;
+  box-shadow: 2px 2px 2px black;
+}
+
+.navbar-brand {
+  color: $primary-color;
+}
+
+.navbar-toggler {
+  border-color: $primary-color;
+}
+
+.nav-link {
+  @extend %nav-link;
+}
+
+// Animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Transitions
+.navbar-collapse {
+  animation: fadeIn 1ms;
+}
+
+
+
+
+// Variables
+$title-color: #990beb;
+$title-shadow-color: #333;
+$title-font-size: 2.5rem;
+$title-border-radius: 10px;
+$transition-duration: 1s;
+
+// Mixins
+@mixin transition($property: all) {
+  transition: $property $transition-duration ease-in-out;
+}
+
+// Styles
+.titulo {
+  text-align: center;
+}
+
+.titulo h1 {
+  color: $title-color;
+  font-size: $title-font-size;
+  text-shadow: 2px 2px 4px $title-shadow-color;
+  border-radius: $title-border-radius;
+}
+
+// Animation
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Transitions
+.titulo h1 {
+  animation: fadeInUp 1s;
+}
+
+
+
+
+.carousel-inner {
+    width: 40%; // Ajustar al ancho máximo del contenedor
+    height: 100%;
+    margin: 0 auto; // Centrar horizontalmente
+    box-shadow: 2px 4px 5px black;
+    transition: all 1s ease-in;
+    animation: infinite ease-in;
+  }
+  
+  .carousel-item img {
+    width: 100%; // Establecer el ancho al 100% del contenedor
+    height: auto; // Mantener la proporción de aspecto original
+    display: block;
+    margin: 0 auto; // Centrar horizontalmente
+  }
+  
+  .carousel-control-prev, .carousel-control-next {
+    width: 100%; // Ancho de los botones de control
+  }
+  
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(100%); // Invertir el color del icono
+  }
+  
+  .carousel-control-prev-icon::before, .carousel-control-next-icon::before {
+    display: none; // Ocultar los pseudo-elementos ::before de los iconos
+  }
+  
+
+  .carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    font-size: 1.5rem;
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+
+// Variables
+$shadow-color: rgba(0, 0, 0, 0.3);
+$transition-duration: 0.3s;
+
+// Mixins
+@mixin transition($property: all) {
+  transition: $property $transition-duration ease-in-out;
+}
+
+// Estilos
+.github_proyecto {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 6px $shadow-color;
+  
+  p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    @include transition(color);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin-bottom: 10px;
+      
+      a {
+        text-decoration: none;
+        color: blue;
+        @include transition(color);
+        
+        &:hover {
+          color: darkblue;
+        }
+      }
+    }
+  }
+}
+
+
+
+// Variables
+$shadow-color: rgba(0, 0, 0, 0.3);
+$transition-duration: 0.3s;
+
+// Mixins
+@mixin transition($property: all) {
+  transition: $property $transition-duration ease-in-out;
+}
+
+// Estilos
+.pagina_infinityfree {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 6px $shadow-color;
+  
+  p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    @include transition(color);
+  }
+
+  a {
+    text-decoration: none;
+    color: blue;
+    @include transition(color);
+    
+    &:hover {
+      color: darkblue;
+    }
+  }
+}
+
+
+
+p{
+    text-align: center;
+    text-shadow: 2px 4px 5px seagreen;
+}
+
+
+.image-container {
+    display: flex;
+    gap: 10px; /* Espacio entre las imágenes */
+    justify-content: center;
+}
+
+.image-container img {
+    width: 800px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantenemos la proporción de la imagen */
+    border-radius: 20px;
+    box-shadow: 2px 4px 5px seagreen;
+    transition: transform 0.3s ease-in-out; /* Transición en la propiedad transform */
+    margin: 20px;
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Hace que la imagen se agrande ligeramente al pasar el ratón por encima */
+}
+
+
+
+// Variables
+$title-color: #333;
+$text-color: #310bda;
+$transition-duration: 1s;
+
+// Mixins
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+// Estilos
+.maquinas_vulnerables {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+
+    h2 {
+        color: $title-color;
+        @include center;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        li {
+            color: $text-color;
+            margin-bottom: 10px;
+            transition: color $transition-duration;
+            &:hover {
+                color: darken($text-color, 20%);
+            }
+        }
+    }
+
+    p {
+        color: $text-color;
+        margin-top: 20px;
+        transition: color $transition-duration;
+        &:hover {
+            color: darken($text-color, 20%);
+        }
+    }
+}
+
+
+
+
+// Variables
+$footer-background: #2e096b;
+$footer-text-color:white;
+$footer-link-color: rgba(1, 235, 102, 0.822);
+$transition-duration: 1s;
+
+// Mixin
+@mixin static-footer {
+    position: static;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+// Estilos
+footer {
+    background-color: $footer-background;
+    padding: 20px;
+    text-align: center;
+    color: $footer-text-color;
+    font-size: 14px;
+    
+    .contacto {
+        h3 {
+            margin-bottom: 10px;
+            color: $footer-text-color;
+        }
+        
+        a {
+            color: $footer-link-color;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color $transition-duration;
+            margin: 4%;
+            &:hover {
+                color: darken($footer-link-color, 20%);
+            }
+        }
+    }
+    
+    @include static-footer; // Aplicar mixin para hacer el footer estático
+}
+
+
+
+// Variables
+$primary-color: #007bff;
+$background-color: #f8f9fa;
+
+// Media queries para dispositivos móviles
+@media (max-width: 768px) {
+    /* Estilos para el título */
+    .titulo h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    /* Estilos para los textos */
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    /* Estilos para las imágenes */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Estilos para los enlaces */
+    a {
+        color: $primary-color;
+        text-decoration: none;
+    }
+    
+    /* Estilos para el navbar */
+    .navbar {
+        padding: 10px;
+        background-color: $background-color;
+    }
+    
+    /* Estilos para el contenido de GitHub proyecto */
+    .github_proyecto,
+    .pagina_infinityfree,
+    .maquinas_virtuales,
+    .maquinas_vulnerables,
+    footer {
+        padding: 20px;
+        background-color: $background-color;
+        color: black;
+        margin-bottom: 20px; // Separación entre secciones
+    }
+    
+    /* Estilos para el carousel */
+    .carousel-item img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Estilos para la lista de máquinas virtuales */
+    .maquinas_virtuales .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    /* Estilos para el footer */
+    footer {
+        padding: 20px;
+        background-color: $background-color;
+    }
+}
+
+

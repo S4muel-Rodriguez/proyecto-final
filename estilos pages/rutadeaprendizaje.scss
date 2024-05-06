@@ -1,0 +1,834 @@
+
+// Definir variables
+$color-body-tertiary: #dd3434;
+$color-text-primary: #1dc9a4;
+$color-hover: #872adf;
+
+// Definir mixins
+@mixin transition($properties, $duration) {
+  transition: $properties $duration ease;
+}
+
+// Definir extends
+%navbar-link {
+  color: $color-text-primary;
+  &:hover {
+    color: $color-hover;
+  }
+}
+
+// Estilo para la barra de navegación
+.navbar {
+  background-color: $color-body-tertiary;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+  // Extender el estilo del enlace de la barra de navegación
+  .nav-link {
+    @extend %navbar-link;
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+
+// Animaciones y transiciones
+.navbar-toggler-icon {
+  // Rotar el icono del botón de alternancia
+  transform: rotate(0deg);
+  @include transition(transform, 1s);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  transform: rotate(90deg);
+}
+
+// Estilo para el menú desplegable
+.navbar-nav {
+  .nav-item {
+    .nav-link {
+      // Ancho del enlace del menú desplegable
+      width: 100%;
+      // Añadir transición al color del enlace
+      @include transition(color, 1s);
+    }
+  }
+}
+
+
+
+
+// Definir variables
+$color-titulo: #3e0b79;
+$color-subtitulo: #a711a7;
+$shadow-color: rgb(0, 0, 0);
+
+// Definir mixins
+@mixin animation($name, $duration, $timing) {
+  animation: $name $duration $timing;
+}
+
+// Estilo para el título
+.titulo {
+  text-align: center;
+  h1 {
+    color: $color-titulo;
+    // Añadir sombra al texto
+    text-shadow: 2px 4px 5px $shadow-color;
+    // Animación de entrada
+    @include animation(entrada, 4s, ease);
+  }
+}
+
+// Estilo para el subtítulo
+.subtitulo {
+  text-align: center;
+  h2 {
+    color: $color-subtitulo;
+    // Añadir sombra al texto
+    text-shadow: 2px 2px 4px $shadow-color;
+    // Transición de color
+    transition: color 0.3s ease;
+    // Animación de entrada
+    @include animation(entrada, 2s, ease);
+  }
+}
+
+// Definir la animación de entrada
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+// Definir variables
+$color-titulo: #3e0b79;
+$color-subtitulo: #a711a7;
+$shadow-color: rgba(0, 0, 0, 0.2);
+$transition-duration: 0.3s;
+
+// Definir mixins
+@mixin transition($properties) {
+  transition: $properties $transition-duration ease;
+}
+
+// Definir extends
+%lista-front {
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 0.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Estilos para el contenedor principal
+.lista_front {
+  text-align: center;
+  margin-top: 50px; // Ajuste para centrar verticalmente en la página
+}
+
+// Estilo para el título
+h3 {
+  color: $color-titulo;
+  // Añadir sombra al texto
+  text-shadow: 2px 4px 5px $shadow-color;
+  // Transición de color
+  @include transition(color);
+  text-align: center;
+}
+
+// Estilo para el subtítulo
+.lista_front {
+  p {
+    color: $color-subtitulo;
+    // Transición de color
+    @include transition(color);
+  }
+  @extend %lista-front;
+  color: slateblue;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  transition: all 1s ease-in-out;
+}
+
+// Definir la animación de entrada
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+h4 {
+    color: $color-titulo;
+     
+    text-shadow: 2px 4px 5px $shadow-color;
+    // Transición de color
+    @include transition(color);
+    text-align: center;
+  }
+  
+  // Estilo para el subtítulo
+  .lista-backend {
+    p {
+      color: $color-subtitulo;
+      // Transición de color
+      @include transition(color);
+    }
+    @extend %lista-front;
+    color: slateblue;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    transition: all 1s ease-in-out;
+    text-align: center;
+  }
+  
+  // Definir la animación de entrada
+  @keyframes entrada {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+
+// Estilos para el contenedor de imágenes de tecnologías clásicas front-end
+.imagenes_tecnologias-clasicas--frotend {
+  display: flex;
+  justify-content: space-around; // Espacio uniforme entre las imágenes
+  align-items: center; // Centrar verticalmente las imágenes
+  // Establecer una altura máxima para las imágenes
+  background-image: linear-gradient(to right, rgb(231, 128, 10),rgba(0, 0, 255, 0.658), rgb(118, 33, 228));
+  img {
+    max-height: 100px; // Altura máxima deseada
+    margin: 0 10px; // Espacio horizontal entre las imágenes
+    border-radius: 35px;
+    animation-name: animacion;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+  }
+}
+
+
+
+
+// Mixin para transiciones
+@mixin transition($properties) {
+  transition: $properties $transition-duration ease;
+}
+
+// Estilos para el contenedor de imágenes de tecnologías clásicas backend
+.imagenes_tecnologias-clasicas--backend {
+  display: flex;
+  justify-content: center; // Centrar horizontalmente las imágenes
+  align-items: center; // Centrar verticalmente las imágenes
+  background-image: linear-gradient(rgb(31, 177, 94), #333);
+
+  img {
+    object-fit: contain; // Ajustar la imagen dentro de su contenedor manteniendo su aspecto
+    max-width: 100%; // Evitar que la imagen se salga de su contenedor
+    max-height: 100%; // Evitar que la imagen se salga de su contenedor
+    height: 100px; // Altura fija para todas las imágenes (cambiar según sea necesario)
+    margin: 0 5px; // Separación entre las imágenes
+    border-radius: 20px;
+    margin: 50px;
+    // Animación de entrada
+    @include transition(all);
+  }
+}
+
+
+
+// Mixin para transiciones
+@mixin transition($properties) {
+  transition: $properties $transition-duration ease;
+}
+
+// Estilos para el contenedor de texto sobremis--estudios
+.sobremis--estudios {
+  text-align: center; // Centrar el texto
+  width: 80%; // Ancho del contenedor
+  margin: 0 auto; // Centrar horizontalmente
+  padding: 20px; // Espaciado interno
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
+  border-radius: 10px; // Bordes redondeados
+  background-color: #f9f9f9; // Color de fondo
+
+  p {
+    // Añadir sombra al texto
+    text-shadow: 2px 4px 5px #333;
+    // Transición para el color de texto
+    @include transition(color);
+  }
+}
+
+
+// Estilos para el contenedor de texto os_hacking
+.os_hacking {
+  text-align: center; // Centrar el texto
+  width: 80%; // Ancho del contenedor
+  margin: 0 auto; // Centrar horizontalmente
+  padding: 20px; // Espaciado interno
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
+  border-radius: 10px; // Bordes redondeados
+  background-color: #f9f9f9; // Color de fondo
+
+  p {
+    // Añadir sombra al texto
+    text-shadow: 2px 4px 5px #333;
+    // Transición para el color de texto
+    @include transition(color);
+  }
+}
+
+
+
+// Estilos para el contenedor de imágenes
+.imagenes_distros {
+  display: flex;
+  justify-content: center; // Centrar horizontalmente
+  align-items: center; // Centrar verticalmente
+  background-image: linear-gradient(blue, seagreen);
+  border-radius: 10px;
+
+  img {
+    max-width: 100%; // Evitar que la imagen se salga del contenedor
+    max-height: 100%; // Evitar que la imagen se salga del contenedor
+    object-fit: contain; // Ajustar la imagen dentro de su contenedor manteniendo su aspecto
+    box-shadow: 4px 4px 5px #1dc9a4;
+    animation: alternate 1s all ease-in;
+  }
+}
+
+// Mixin para transiciones
+@mixin transition($properties) {
+  transition: $properties $transition-duration ease;
+}
+
+// Estilos para el contenedor de presentación de herramientas
+.presentacion_herramientas {
+  text-align: center; // Centrar el texto horizontalmente
+
+  h4 {
+    // Añadir sombra al texto
+    text-shadow: 2px 4px 5px rgba(6, 192, 90, 0.781);
+    // Transición para el color de texto
+    @include transition(color);
+  }
+
+  p {
+    // Añadir sombra al texto
+    text-shadow: 2px 4px 5px rgba(99, 4, 4, 0.678);
+    // Transición para el color de texto
+    @include transition(color);
+  }
+}
+
+// Mixin para transiciones
+@mixin transition($properties) {
+  transition: $properties $transition-duration ease;
+}
+
+// Estilos para la lista de herramientas de hacking
+.lista_de_herramientas--hacking {
+  ul {
+    list-style: none; // Eliminar viñetas de la lista
+    padding: 0; // Eliminar el relleno predeterminado
+    text-align: center; // Alinear texto a la izquierda
+    
+
+    li {
+      // Añadir sombra al texto
+      text-shadow:  1px 1px 1px #fff;
+      // Transición para el color de texto
+      @include transition(color);
+    }
+  }
+}
+
+
+
+
+
+// Mixin para transiciones
+@mixin transition($properties) {
+  transition: $properties $transition-duration ease;
+}
+
+// Estilos para la imagen
+.img_herramientaskali {
+  display: flex;
+  justify-content: center; // Centrar horizontalmente
+  align-items: center; // Centrar verticalmente
+  border-radius: 20px;
+    
+
+  img {
+    max-width: 100%; // Evitar que la imagen se salga del contenedor
+    max-height: 100%; // Evitar que la imagen se salga del contenedor
+    object-fit: contain; // Ajustar la imagen dentro de su contenedor manteniendo su aspecto
+    // Animación de entrada
+    @include transition(all);
+    // Sombra suave
+    box-shadow: 2px 4px 5px rgba(33, 2, 209, 0.788);
+    border-radius: 20px; // Bordes redondeados
+
+    &:hover {
+      // Transición para la sombra al pasar el cursor sobre la imagen
+      box-shadow: 2px 4px 5px rgb(133, 3, 255);
+    }
+  }
+}
+
+
+
+
+
+// Mixin para transiciones
+@mixin transition($properties) {
+  transition: $properties $transition-duration ease;
+}
+
+// Estilos para el contenedor de lista y imagen
+.listadetipos_de_auditoria-pentesting {
+  text-align: center; // Centrar el texto horizontalmente
+
+  p {
+    // Añadir sombra al texto del párrafo
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 20px;
+    text-shadow: 2px 4px 5px black;
+  }
+
+  ol {
+    list-style: none; // Eliminar viñetas de la lista
+    padding: 0; // Eliminar el relleno predeterminado
+    text-align: center; // Alinear texto a la izquierda
+    margin: 0 auto; // Centrar la lista horizontalmente
+    max-width: 80%; // Ancho máximo para la lista
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
+    border-radius: 20px; // Bordes redondeados
+
+    li {
+      // Añadir sombra al texto de cada elemento de la lista
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      // Transición para el color de texto
+      @include transition(color);
+      text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.397);
+    }
+  }
+
+  img {
+    max-width: 60%; // Evitar que la imagen se salga del contenedor
+    max-height: 80%; // Evitar que la imagen se salga del contenedor
+    object-fit: contain; // Ajustar la imagen dentro de su contenedor manteniendo su aspecto
+    // Transición para la imagen
+    @include transition(all);
+    // Sombra suave
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 50px; // Bordes redondeados
+    box-shadow: 2px 4px 5px grey;
+
+    &:hover {
+      // Transición para la sombra al pasar el cursor sobre la imagen
+      box-shadow: 2px 8px 16px black;
+    }
+  }
+}
+
+
+// Estilos para el contenedor de información de las fases del pentesting
+.info_fases_del-pentesting {
+  text-align: center; // Centrar el texto horizontalmente
+  text-shadow: 2px 4px 5px rgba(255, 0, 0, 0.384);
+  
+
+  p {
+    margin-bottom: 10px; // Espacio entre párrafos
+  }
+
+  img {
+    display: block; // Mostrar la imagen como un bloque para centrarla horizontalmente
+    margin: 0 auto; // Centrar la imagen horizontalmente
+    max-width: 100%; // Evitar que la imagen se salga del contenedor
+    max-height: 100%; // Evitar que la imagen se salga del contenedor
+    object-fit: contain; // Ajustar la imagen dentro de su contenedor manteniendo su aspecto
+    border-radius: 30px;
+    box-shadow: 2px 4px 5px rgba(189, 2, 2, 0.527);
+  }
+}
+
+
+// Estilos para el footer
+footer {
+  position: static; // Fijar el footer en la parte inferior de la ventana
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #440cad; // Color de fondo del footer
+  box-shadow: 2px 4px 5px seagreen; // Sombra suave en la parte superior
+  padding: 10px;
+  margin: 20px;
+  height: 100%;
+
+  .contactos {
+    display: flex; // Mostrar los elementos en línea
+    flex-direction: column; // Orientación de los elementos en columna
+    align-items: center; // Centrar los elementos horizontalmente
+    gap: 10px; // Espacio entre los elementos
+
+    h5 {
+      margin: 0; // Eliminar el margen del título
+      font-size: 1.2rem; // Tamaño de fuente del título
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); // Sombra suave en el texto
+    }
+
+    a {
+      display: flex; // Mostrar los elementos en línea
+      align-items: center; // Centrar los elementos verticalmente
+      text-decoration: none; // Quitar subrayado de los enlaces
+      color: #0dca55a1; // Color de texto de los enlaces
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); // Sombra suave en el texto
+      transition: transform 1s ease; // Transición para el efecto al pasar el cursor sobre el enlace
+
+      &:hover {
+        color: #555; // Cambio de color al pasar el cursor sobre el enlace
+        transform: translateY(-2px); // Efecto de elevación al pasar el cursor sobre el enlace
+      }
+    }
+
+    img {
+      height: 45px; // Altura de las imágenes
+      width: auto; // Ancho automático para mantener la proporción
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); // Sombra suave en las imágenes
+    }
+
+    p {
+      margin: 0; // Eliminar el margen del párrafo
+      font-size: 0.8rem; // Tamaño de fuente del párrafo
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); // Sombra suave en el texto
+    }
+  }
+}
+
+
+
+
+// Variables generales
+$transition-duration: 0.3s; // Duración de las transiciones
+
+// Estilos base para todo el sitio
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+// Estilos para la barra de navegación
+.navbar {
+  background-color: #dd3434;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: #1dc9a4;
+  &:hover {
+    color: #872adf;
+  }
+  &.active {
+    font-weight: bold;
+  }
+}
+
+// Animaciones y transiciones
+.navbar-toggler-icon {
+  transition: transform 0.5s ease;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  transform: rotate(90deg);
+}
+
+// Estilos para el título
+.titulo {
+  h1 {
+    color: #3e0b79;
+    text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+    animation: entrada 4s ease;
+  }
+}
+
+// Estilos para el subtítulo
+.subtitulo {
+  h2 {
+    color: #a711a7;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease;
+    animation: entrada 2s ease;
+  }
+}
+
+// Estilos para las listas
+.lista-front,
+.lista-backend,
+.lista_de_herramientas--hacking {
+  color: slateblue;
+  font-size: 16px; // Reducir tamaño de fuente para dispositivos móviles
+  font-family: 'Courier New', Courier, monospace;
+}
+
+// Estilos para las imágenes
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Estilos para el contenedor de texto sobre mis estudios
+.sobremis--estudios {
+  width: 90%; // Ajustar el ancho para dispositivos móviles
+  margin: 20px auto; // Centrar el contenedor
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+// Estilos para el contenedor de imágenes de distros
+.imagenes_distros {
+  background-image: linear-gradient(blue, seagreen);
+  border-radius: 10px;
+  margin: 20px auto; // Centrar el contenedor
+  padding: 10px;
+  box-shadow: 4px 4px 5px #1dc9a4;
+}
+
+// Estilos para el contenedor de presentación de herramientas
+.presentacion_herramientas {
+  text-align: center;
+}
+
+// Estilos para la imagen de herramientas Kali
+.img_herramientaskali {
+  margin: 20px auto; // Centrar la imagen
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
+// Estilos para el footer
+footer {
+  background-color: #440cad;
+  box-shadow: 2px 4px 5px seagreen;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contactos {
+  h5 {
+    font-size: 1rem; // Reducir tamaño de fuente para dispositivos móviles
+  }
+  a {
+    color: #0dca55a1;
+    transition: transform 0.5s ease;
+    &:hover {
+      color: #555;
+      transform: translateY(-2px);
+    }
+  }
+  img {
+    height: 30px;
+    width: auto;
+    margin: 0 5px; // Alinear los íconos
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  p {
+    font-size: 0.8rem; // Reducir tamaño de fuente para dispositivos móviles
+  }
+}
+
+
+
+// Estilos base para todo el sitio
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 16px; // Tamaño de fuente base para dispositivos móviles
+}
+
+// Estilos para el contenedor de texto sobre mis estudios
+.sobremis--estudios {
+  width: 90%; // Ajustar el ancho para dispositivos móviles
+  margin: 20px auto; // Centrar el contenedor
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  
+  p {
+    font-size: 14px; // Reducir tamaño de fuente para dispositivos móviles
+  }
+}
+
+// Estilos para el contenedor de imágenes de distros
+.imagenes_distros {
+  background-image: linear-gradient(blue, seagreen);
+  border-radius: 10px;
+  margin: 20px auto; // Centrar el contenedor
+  padding: 10px;
+  box-shadow: 4px 4px 5px #1dc9a4;
+  
+  img {
+    max-width: 80%; // Ajustar el ancho máximo de las imágenes
+    margin: 10px auto; // Centrar las imágenes
+  }
+}
+
+// Estilos para el contenedor de presentación de herramientas
+.presentacion_herramientas {
+  text-align: center;
+  
+  h4 {
+    font-size: 1.2rem; // Tamaño de fuente para dispositivos móviles
+  }
+  
+  p {
+    font-size: 14px; // Reducir tamaño de fuente para dispositivos móviles
+  }
+}
+
+// Estilos para la imagen de herramientas Kali
+.img_herramientaskali {
+  margin: 20px auto; // Centrar la imagen
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease;
+  
+  &:hover {
+    box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
+// Estilos para el footer
+footer {
+  background-color: #440cad;
+  box-shadow: 2px 4px 5px seagreen;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+  
+  .contactos {
+    h5 {
+      font-size: 1rem; // Tamaño de fuente para dispositivos móviles
+    }
+    
+    a {
+      font-size: 14px; // Tamaño de fuente para dispositivos móviles
+    }
+    
+    img {
+      height: 30px;
+    }
+    
+    p {
+      font-size: 0.8rem; // Tamaño de fuente para dispositivos móviles
+    }
+  }
+}
+
+
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  nav.navbar .navbar-nav {
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center; /* Centrar elementos horizontalmente */
+  }
+
+  nav.navbar .navbar-nav .nav-item {
+    margin-bottom: 10px; /* Añadir espacio entre elementos */
+  }
+
+  nav.navbar .navbar-nav .nav-link {
+    padding: 10px; /* Añadir espacio entre enlaces */
+  }
+
+  .titulo h1 {
+    font-size: 24px; /* Ajustar el tamaño de la fuente */
+  }
+
+  .subtitulo h2 {
+    font-size: 20px; /* Ajustar el tamaño de la fuente */
+  }
+
+  .lista_front,
+  .lista-backend,
+  .lista_de_herramientas--hacking {
+    font-size: 12px; /* Reducir el tamaño de la fuente */
+  }
+
+  .imagenes_tecnologias-clasicas--frotend img,
+  .imagenes_tecnologias-clasicas--backend img,
+  .imagenes_distros img,
+  .img_herramientaskali img {
+    max-width: 100%; /* Ajustar el ancho máximo de las imágenes */
+    margin: 10px auto; /* Centrar las imágenes */
+  }
+
+  .contactos {
+    padding: 10px 0; /* Reducir el padding para dispositivos móviles */
+  }
+}
+
+
+/* Media queries para escritorio */
+@media (min-width: 769px) {
+  nav.navbar .navbar-nav {
+    flex-direction: row; /* Revertir la dirección para escritorio */
+  }
+
+  nav.navbar .navbar-nav .nav-item {
+    margin-bottom: 0; /* Eliminar el espacio entre elementos para escritorio */
+    margin-right: 15px; /* Añadir espacio horizontal entre elementos para escritorio */
+  }
+
+  .titulo h1 {
+    font-size: 36px; /* Ajustar el tamaño de la fuente para escritorio */
+  }
+
+  .subtitulo h2 {
+    font-size: 28px; /* Ajustar el tamaño de la fuente para escritorio */
+  }
+
+  .lista_front,
+  .lista-backend,
+  .lista_de_herramientas--hacking {
+    font-size: 16px; /* Ajustar el tamaño de la fuente para escritorio */
+  }
+}

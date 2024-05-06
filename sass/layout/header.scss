@@ -1,0 +1,67 @@
+// Estilos del encabezado
+// Extender la barra de navegación
+header{
+.barradenavegacion {
+    background-color: $negro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    @include sombra($negro);
+  
+  }
+  
+  // Estilo de los elementos de la barra de navegación
+  ul {
+  list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+  
+    margin: 0 10px;
+  }
+  
+  a {
+      text-decoration: none;
+    color: $blanco;
+    @include animacion;
+  
+    &:hover {
+      color: $verde-claro;
+      text-decoration: none;
+    }
+  }
+  
+  // Definición de colores
+  $verde-oscuro: #005E3A;
+  $verde-claro: #00A884;
+  $negro: #040007;
+  $blanco: #dfd4d4d3;
+  $seagreen: seagreen;
+  
+  // Mixin para las animaciones
+  @mixin animacion {
+    transition: color 2s ease;
+  }
+  
+  // Mixin para las sombras
+  @mixin sombra {
+    box-shadow: 2px 4px 5px rgba($negro, 1);
+  }
+  
+  // Estilo de los títulos
+  .titulos {
+    background-color: $seagreen;
+    text-align: center;
+    padding: 20px;
+    @include sombra;
+  
+    h1, h2 {
+      color: $blanco;
+      @include animacion;
+      text-shadow: 2px 4px 5px rgba($negro, 1);
+    }
+  }
+}

@@ -1,0 +1,160 @@
+//mixins
+
+// Definición de colores
+$verde-oscuro: #005E3A;
+$verde-claro: #00A884;
+$negro: #000000;
+$blanco: #FFFFFF;
+
+// Mixin para las sombras
+@mixin sombra($color) {
+  box-shadow: 0 2px 5px rgba($color, 0.2);
+  
+}
+// Mixin para las animaciones
+@mixin animacion {
+  transition: all 0.3s ease;
+
+}
+
+// Extender la barra de navegación
+.barradenavegacion {
+  background-color: $negro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  @include sombra($negro);
+
+}
+
+// Estilo de los elementos de la barra de navegación
+ul {
+list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+
+  margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+  color: $blanco;
+  @include animacion;
+
+  &:hover {
+    color: $verde-claro;
+    text-decoration: none;
+  }
+}
+
+// Definición de colores
+$verde-oscuro: #005E3A;
+$verde-claro: #00A884;
+$negro: #040007;
+$blanco: #dfd4d4d3;
+$seagreen: seagreen;
+
+// Mixin para las animaciones
+@mixin animacion {
+  transition: color 2s ease;
+}
+
+// Mixin para las sombras
+@mixin sombra {
+  box-shadow: 2px 4px 5px rgba($negro, 1);
+}
+
+// Estilo de los títulos
+.titulos {
+  background-color: $seagreen;
+  text-align: center;
+  padding: 20px;
+  @include sombra;
+
+  h1, h2 {
+    color: $blanco;
+    @include animacion;
+    text-shadow: 2px 4px 5px rgba($negro, 1);
+  }
+}
+
+
+// Mixin para centrar el texto
+@mixin centrar-texto {
+    text-align: center;
+  }
+  
+  // Mixin para las animaciones
+  @mixin animacion {
+    transition: all 0.3s ease;
+  }
+  
+  // Estilo del texto
+  .texto {
+    @include centrar-texto;
+    padding: 20px;
+    font-size: 25px;
+    background-color: #005E3A;
+  
+    p {
+      color: $blanco;
+      @include animacion;
+      text-shadow: 1px 1px 2px rgba($negro, 1);
+    }
+  }
+  
+
+
+// Mixin para las sombras
+@mixin sombra {
+    box-shadow: 0 2px 5px rgba($negro, 0.2);
+  }
+  
+  // Mixin para las animaciones
+  @mixin animacion {
+    transition: all 0.3s ease;
+  }
+  
+  // Mixin para centrar contenido
+  @mixin centrar-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  // Estilo de las cards
+  section {
+    article {
+      display: flex;
+      justify-content: center; 
+      padding: 20px;
+      background-image: linear-gradient(to right,  rgba(235, 11, 11, 0.774) , rgb(91, 8, 168));
+  
+      .card {
+        margin: 50px; 
+        width: 40%; 
+        @include sombra;
+        @include animacion;
+        @include centrar-contenido;
+  
+        img {
+          max-width: 100%;
+          height: auto;
+          @include animacion;
+        }
+  
+        .card-body {
+          p.card-text {
+            @include centrar-contenido;
+            color: $negro;
+            text-shadow: 2px 4px 5px rgba($negro, 1);
+          }
+        }
+        }
+    }
+    }
+    

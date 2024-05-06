@@ -1,0 +1,13 @@
+@charset "UTF-8";
+footer {
+  padding: 5px; /* Reducción del espaciado */
+  position: fixed; /* Fijar el footer */
+  bottom: 0; /* Colocar el footer en la parte inferior */
+  width: 100%; /* Ancho completo */
+  background-color: #020202; /* Color de fondo */
+  color: seagreen; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  border-radius: 20px; /* Bordes redondeados */
+}
+
+/*# sourceMappingURL=footer.css.map */

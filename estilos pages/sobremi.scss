@@ -1,0 +1,326 @@
+body{
+    background-color: #333;
+    color: white;
+}
+
+// Variables
+$primary-color: #007bff;
+$bg-color: #f8f9fa;
+$nav-link-color: #212529;
+
+// Mixin para animación
+@mixin nav-link-animation {
+  transition: color 0.3s ease-in-out;
+}
+
+// Mixin para sombra
+@mixin nav-item-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Estilos para la barra de navegación
+.navbar {
+  background-color: $bg-color;
+}
+
+// Estilos para el enlace de la marca
+.navbar-brand {
+  color: $primary-color;
+}
+
+// Estilos para el botón de alternar
+.navbar-toggler {
+  border-color: $primary-color;
+}
+
+// Estilos para los enlaces de navegación
+.navbar-nav {
+  .nav-link {
+    color: $nav-link-color;
+    @include nav-link-animation;
+
+    &.active,
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// Estilos para los elementos colapsados
+.navbar-collapse {
+  .nav-item {
+    @include nav-item-shadow;
+  }
+}
+
+
+
+
+.titulo_texto {
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+  
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  
+
+
+
+// Variables
+$text-color: #333;
+$bg-color: #f5f5f5;
+$primary-color: #007bff;
+
+// Estilos para el contenedor de pasatiempos
+.pasatiempos {
+  text-align: center; // Centra todo el contenido
+  padding: 20px;
+  background-color: $bg-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+
+  h2 {
+    color: $primary-color;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none; // Quita los puntos de la lista
+    padding: 0;
+    text-align:  center; // Centra los elementos de la lista
+
+    li {
+      color: $text-color;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+
+
+// Variables
+$text-color: #333;
+$bg-color: #f5f5f5;
+$primary-color: #1e90ff; // Blue oscuro
+$secondary-color: #8a2be2; // Blueviolet
+
+// Estilos para el contenedor de estudio favorito
+.estudio_fav {
+  text-align: center; // Centra todo el contenido
+  padding: 20px;
+  background-color: $bg-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out; // Transición para la sombra
+
+  p {
+    color: $text-color;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: color 0.3s ease-in-out; // Transición para el color del texto
+
+    &:hover {
+      color: $secondary-color; // Cambio de color al pasar el cursor sobre el texto
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Cambio de sombra al pasar el cursor sobre el contenedor
+  }
+}
+
+
+h3{
+    text-align: center;
+    text-decoration: underline;
+    box-shadow: 2px 4px 2px blueviolet;
+    color: white;
+    text-shadow: 2px 5px 5px rgb(90, 7, 167);
+}
+
+
+
+// Variables
+$img-width: 800px; // Ancho deseado para las imágenes
+$img-height: auto; // La altura se ajustará automáticamente para mantener la proporción original
+
+// Estilos para las imágenes
+.img_estudios {
+  display: flex; // Utiliza flexbox para colocar las imágenes una al lado de la otra
+  justify-content: center; // Centra las imágenes horizontalmente
+  margin-top: 20px;
+
+  img {
+    width: $img-width; // Establece el ancho de todas las imágenes
+    height: $img-height; // La altura se ajustará automáticamente para mantener la proporción original
+    margin: 25px; // Margen entre las imágenes
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px white; // Sombra
+    transition: box-shadow 1s ease-in-out; // Transición para la sombra
+    object-fit: cover;
+
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Cambio de sombra al pasar el cursor sobre la imagen
+    }
+  }
+}
+
+
+
+
+
+// Estilos para el contenedor de información y enlaces
+.info_enlaces {
+    text-align: center; // Centra todo el contenido
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra
+    transition: box-shadow 0.3s ease-in-out; // Transición para la sombra
+  
+    p {
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // Sombra para el texto
+      transition: text-shadow 0.3s ease-in-out; // Transición para la sombra del texto
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // Sombra para los enlaces
+        transition: text-shadow 0.3s ease-in-out; // Transición para la sombra de los enlaces
+  
+        a {
+          text-decoration: none;
+          color: cadetblue; // Color del enlace
+          transition: color 1s ease-in-out; // Transición para el color del enlace
+  
+          &:hover {
+            color: #007bff; // Cambio de color al pasar el cursor sobre el enlace
+          }
+        }
+  
+        &:not(:last-child) {
+          margin-bottom: 5px; // Espaciado entre los enlaces
+        }
+      }
+    }
+  
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Cambio de sombra al pasar el cursor sobre el contenedor
+    }
+  }
+  
+  .redesociales{
+    text-align: center;
+    text-shadow: white;
+    color: skyblue;
+    text-decoration: none;
+    a{
+        text-shadow: white;
+    color: skyblue;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(107, 104, 104, 0.562);
+    margin: 40px;
+    transition: 1s all ease-in;
+    }
+    }
+
+
+
+
+  h4 {
+    margin-bottom: 10px; // Espacio inferior para el título
+    text-shadow: 2px 2px 4px lightgreen; // Sombra para el título
+    order: -1; // Coloca el título antes que los enlaces
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    /* Estilos para la barra de navegación en dispositivos móviles */
+    .navbar-nav {
+      flex-direction: column; /* Coloca los enlaces en columna en dispositivos móviles */
+      align-items: center; /* Centra los enlaces verticalmente */
+    }
+    .navbar-nav .nav-link {
+      margin: 10px 0; /* Espacio entre los enlaces */
+    }
+  
+    /* Estilos para el contenedor de texto y título en dispositivos móviles */
+    .titulo_texto {
+      padding: 10px; /* Reduce el padding en dispositivos móviles */
+    }
+    .titulo_texto h1 {
+      font-size: 1.5rem; /* Reduce el tamaño del título en dispositivos móviles */
+    }
+    .titulo_texto p {
+      font-size: 0.9rem; /* Reduce el tamaño del texto en dispositivos móviles */
+    }
+  
+    /* Estilos para el contenedor de pasatiempos en dispositivos móviles */
+    .pasatiempos {
+      padding: 10px; /* Reduce el padding en dispositivos móviles */
+    }
+    .pasatiempos h2 {
+      font-size: 1.2rem; /* Reduce el tamaño del título en dispositivos móviles */
+    }
+    .pasatiempos ul li {
+      font-size: 0.9rem; /* Reduce el tamaño de los elementos de la lista en dispositivos móviles */
+    }
+  
+    /* Estilos para el contenedor de estudio favorito en dispositivos móviles */
+    .estudio_fav {
+      padding: 10px; /* Reduce el padding en dispositivos móviles */
+    }
+    .estudio_fav p {
+      font-size: 0.9rem; /* Reduce el tamaño del texto en dispositivos móviles */
+    }
+  
+    /* Estilos para las imágenes en dispositivos móviles */
+    .img_estudios img {
+      width: calc(50% - 20px); /* Establece el ancho de las imágenes al 50% del contenedor */
+      margin: 10px; /* Espacio entre las imágenes en dispositivos móviles */
+    }
+  
+    /* Estilos para el contenedor de información y enlaces en dispositivos móviles */
+    .info_enlaces {
+      padding: 10px; /* Reduce el padding en dispositivos móviles */
+    }
+    .info_enlaces p {
+      margin-bottom: 5px; /* Reduce el espacio inferior para el texto en dispositivos móviles */
+    }
+    .info_enlaces ul li {
+      margin-bottom: 5px; /* Reduce el espaciado entre los enlaces en dispositivos móviles */
+    }
+  
+    /* Estilos para las redes sociales en dispositivos móviles */
+    .redesociales a {
+      margin: 20px 0; /* Espacio entre los enlaces en dispositivos móviles */
+    }
+  }
+  
+  

@@ -1,0 +1,564 @@
+
+body{
+background-image: linear-gradient(to right, rgba(255, 255, 255, 0.877), rgba(0, 0, 0, 0.644));
+    
+}
+
+// Variables
+$bg-body-tertiary: #f0f0f0;
+$text-color: #0c007cb0;
+$shadow-color: rgba(12, 160, 49, 0.979);
+
+// Mixins
+@mixin shadow {
+  box-shadow: 2px 4px 5px $shadow-color;
+}
+
+// Animación
+@mixin transition {
+  transition: all 0.3s ease;
+}
+
+// Estilos para la barra de navegación
+.navbar {
+  background-color: $bg-body-tertiary;
+  padding: 10px 20px;
+  @include shadow;
+  @include transition;
+
+  .navbar-brand {
+    color: $text-color;
+    font-weight: bold;
+    text-decoration: none;
+    @include transition;
+
+    &:hover {
+      color: darken($text-color, 10%);
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $text-color;
+      text-decoration: none;
+      padding: 10px 15px;
+      @include transition;
+
+      &.active {
+        font-weight: bold;
+      }
+
+      &:hover {
+        color: darken($text-color, 10%);
+      }
+    }
+  }
+}
+
+
+// Mixins
+@mixin shadow {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  @mixin transition {
+    transition: all 0.3s ease;
+  }
+  
+  // Estilo del título centrado
+  .titulos{
+    text-align: center;
+    color: rgb(26, 156, 82);
+    font-size: 24px;
+    margin-bottom: 20px;
+    @include shadow;
+    @include transition;
+  
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+  p{
+    text-align: center;
+    color: rgb(150, 11, 214);
+  }
+
+
+
+
+  .certificados {
+    display: flex;
+  
+    img {
+      flex: 1;
+      width: 50%; // Ambas imágenes ocuparán el 50% del ancho del contenedor
+      height: auto; // La altura se ajustará automáticamente para mantener la proporción
+      margin: 0; // Eliminar cualquier margen que pueda tener la imagen
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Aplicar sombra a las imágenes
+      transition: transform 1s ease; // Agregar transición al efecto hover
+    }
+  
+    img + img {
+      margin-left: 10px; // Margen entre las imágenes
+      object-fit: cover;
+    }
+  
+    img:hover {
+      transform: scale(1.05); // Efecto de escala al pasar el mouse
+    }
+  }
+  
+
+
+
+
+
+// Definición de variables
+$shadow-color: rgba(0, 0, 0, 0.2);
+$hover-color: blueviolet;
+
+// Mixin para la sombra del texto
+@mixin text-shadow {
+  text-shadow: 1px 1px 2px $shadow-color;
+}
+
+// Mixin para la animación de cambio de color al pasar el mouse
+@mixin hover-transition {
+  transition: color 0.3s ease;
+}
+
+// Definición de variables
+$shadow-color: rgba(0, 0, 0, 0.2);
+$hover-color: blueviolet;
+
+// Mixin para la sombra del texto
+@mixin text-shadow {
+  text-shadow: 1px 1px 2px $shadow-color;
+}
+
+// Mixin para la animación de cambio de color al pasar el mouse
+@mixin hover-transition {
+  transition: color 0.3s ease;
+}
+
+// Definición de variables
+$shadow-color: rgba(0, 0, 0, 0.2);
+$hover-color: blueviolet;
+
+// Mixin para la sombra del texto
+@mixin text-shadow {
+  text-shadow: 1px 1px 2px $shadow-color;
+}
+
+// Mixin para la animación de cambio de color al pasar el mouse
+@mixin hover-transition {
+  transition: color 0.3s ease;
+}
+
+// Estilos para la lista de habilidades
+.lista_hardskills {
+  display: flex;
+  justify-content: center;  
+  align-items: center; 
+    list-style: none;
+    padding: 0;
+    color: #333;
+    animation: fadeIn 1s ease; 
+}
+    li {
+      display: inline-block;  
+      margin: 10px;  
+      @include text-shadow;  
+      @include hover-transition;  
+
+      &:hover {
+        color: $hover-color;  
+      }
+    }
+  
+
+// Animación de aparición
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+// Animación de aparición
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+h3{
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(5, 68, 32);
+    transition: all 1s ease-in-out;
+}
+
+
+
+// Definición de variables
+$shadow-color: rgba(0, 0, 0, 0.2);
+$hover-opacity: 0.8;
+
+// Mixin para la sombra de la imagen
+@mixin image-shadow {
+  box-shadow: 1px 1px 5px $shadow-color;
+}
+
+// Mixin para la transición de la imagen al pasar el mouse
+@mixin hover-transition {
+  transition: opacity 0.3s ease;
+}
+
+// Definición de variables
+$shadow-color: rgba(0, 0, 0, 0.2);
+$hover-opacity: 0.8;
+$image-width: 100px;  
+$image-height: auto; 
+
+// Mixin para la sombra de la imagen
+@mixin image-shadow {
+  box-shadow: 1px 1px 5px $shadow-color;
+}
+
+// Mixin para la transición de la imagen al pasar el mouse
+@mixin hover-transition {
+  transition: opacity 0.3s ease;
+}
+
+// Definición de variables
+$shadow-color: rgba(0, 0, 0, 0.2);
+$hover-opacity: 1;
+$image-width: 200px; 
+$image-height: auto; 
+
+// Mixin para la sombra de la imagen
+@mixin image-shadow {
+  box-shadow: 1px 1px 5px $shadow-color;
+}
+
+// Mixin para la transición de la imagen al pasar el mouse
+@mixin hover-transition {
+  transition: opacity 0.3s ease;
+}
+
+// Definición de variables
+$shadow-color: rgba(0, 0, 0, 0.2);
+$hover-opacity: 0.8;
+$image-width: 200px;  
+$image-height: auto; 
+
+// Mixin para la sombra de la imagen
+@mixin image-shadow {
+  box-shadow: 1px 1px 5px $shadow-color;
+}
+
+// Mixin para la transición de la imagen al pasar el mouse
+@mixin hover-transition {
+  transition: opacity 1s ease;
+}
+
+// Estilos para el contenedor de imágenes
+.img_skills {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  background-color:#333;
+  border-radius: 30px;
+
+  img {
+    width: $image-width;  
+    height: $image-height;  
+    margin: 10px;  
+    @include image-shadow;  
+    @include hover-transition; 
+    object-fit: cover;
+    transition: 0.5s all ease-in-out;
+    box-shadow: 4px 3px 3px seagreen;
+    border: 2px solid;
+    border-radius: 48px;
+
+    &:hover {
+      opacity: $hover-opacity; 
+      transform: scale(1.05);  
+    }
+  }
+}
+
+// Mixin para el texto centrado
+@mixin texto-centrado {
+    text-align: center;
+  }
+  
+  // Mixin para la sombra en el texto
+  @mixin sombra-texto {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  // Mixin para la transición al pasar el mouse
+  @mixin transicion-hover {
+    transition: all 0.3s ease;
+  }
+  
+  // Estilos para el título
+  h4 {
+    @include texto-centrado; // Aplicar mixin para centrar el texto
+    @include sombra-texto; // Aplicar mixin para agregar sombra al texto
+    @include transicion-hover; // Aplicar mixin para la transición al pasar el mouse
+  
+    &:hover {
+      color: blueviolet; // Cambiar el color al pasar el mouse
+    }
+  }
+  
+  // Estilos para el enlace
+  a {
+    display: block; // Convertir enlace en bloque para que ocupe todo el ancho disponible
+    @include texto-centrado; // Aplicar mixin para centrar el texto
+    @include sombra-texto; // Aplicar mixin para agregar sombra al texto
+    @include transicion-hover; // Aplicar mixin para la transición al pasar el mouse
+    text-align: center;
+    text-decoration: none;
+  
+    &:hover {
+      color: blueviolet; // Cambiar el color al pasar el mouse
+    }
+  }
+  
+  // Variables
+$footer-background-color: #020202;
+$footer-text-color: seagreen;
+$footer-border-radius: 10px;
+$footer-shadow-color: rgba(0, 0, 0, 0.2);
+$footer-transition-duration: 0.3s;
+
+// Mixin para la sombra en el texto
+@mixin sombra-texto {
+  text-shadow: 1px 1px 2px $footer-shadow-color;
+}
+
+// Mixin para la transición
+@mixin transicion {
+  transition: all $footer-transition-duration ease;
+}
+
+// Variables
+$footer-background-color: black;
+$footer-text-color: seagreen;
+$footer-border-radius: 10px;
+$footer-shadow-color: rgba(0, 0, 0, 0.2);
+$footer-transition-duration: 0.3s;
+
+// Mixin para la sombra en el texto
+@mixin sombra-texto {
+  text-shadow: 2px 3px 4px $footer-shadow-color;
+}
+
+// Mixin para la transición
+@mixin transicion {
+  transition: all $footer-transition-duration ease;
+}
+
+// Estilos para el footer
+footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+  text-align: center;
+  border-radius: $footer-border-radius;
+  @include sombra-texto; // Aplicar sombra al texto
+  @include transicion; // Aplicar transición
+
+  .redessociales {
+    padding: 10px;
+    h5 {
+      margin-top: 10px;
+    }
+    a {
+      color: $footer-text-color;
+      text-decoration: none;
+      margin: 10px; // Espacio entre los enlaces
+      @include sombra-texto; // Aplicar sombra al texto
+      @include transicion; // Aplicar transición
+
+      &:hover {
+        color: lighten($footer-text-color, 20%); // Cambiar el color al pasar el mouse
+      }
+    }
+    p {
+      margin-bottom: 0;
+    }
+
+    // Estilos para los enlaces
+    a + a {
+      margin-left: 20px; // Espacio entre los enlaces
+    }
+  }
+}
+
+
+// Variables para dispositivos móviles
+$mobile-breakpoint: 576px; 
+
+// Estilos para el footer
+footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+  text-align: center;
+  border-radius: $footer-border-radius;
+  @include sombra-texto; // Aplicar sombra al texto
+  @include transicion; // Aplicar transición
+
+  .redessociales {
+    padding: 10px;
+
+    h5 {
+      margin-top: 10px;
+    }
+
+    a {
+      color: $footer-text-color;
+      text-decoration: none;
+      margin: 10px; // Espacio entre los enlaces
+      @include sombra-texto; // Aplicar sombra al texto
+      @include transicion; // Aplicar transición
+
+      &:hover {
+        color: lighten($footer-text-color, 20%); // Cambiar el color al pasar el mouse
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    // Estilos para los enlaces
+    a + a {
+      margin-left: 20px; // Espacio entre los enlaces
+    }
+  }
+
+}
+
+
+// Variables comunes
+$shadow-color: rgba(0, 0, 0, 0.2);
+$hover-color: blueviolet;
+$footer-background-color: black;
+$footer-text-color: seagreen;
+$footer-border-radius: 10px;
+$footer-shadow-color: rgba(0, 0, 0, 0.2);
+$footer-transition-duration: 0.3s;
+$mobile-breakpoint: 576px; 
+
+// Mixins comunes
+@mixin shadow {
+  box-shadow: 0 2px 5px $shadow-color;
+}
+
+@mixin transition {
+  transition: all 0.3s ease;
+}
+
+// Mixin para la sombra del texto
+@mixin text-shadow {
+  text-shadow: 1px 1px 2px $shadow-color;
+}
+
+// Mixin para la transición de color al pasar el mouse
+@mixin hover-transition {
+  transition: color 0.3s ease;
+}
+
+// Mixin para el texto centrado
+@mixin text-center {
+  text-align: center;
+}
+
+// Mixin para la sombra en el texto
+@mixin text-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+// Mixin para la transición al pasar el mouse
+@mixin hover-transition {
+  transition: all 0.3s ease;
+}
+
+// Mixin para la sombra de la imagen
+@mixin image-shadow {
+  box-shadow: 1px 1px 5px $shadow-color;
+}
+
+// Mixin para la transición de la imagen al pasar el mouse
+@mixin image-transition {
+  transition: opacity 0.3s ease;
+}
+
+// Estilos comunes para el footer
+footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+  text-align: center;
+  border-radius: $footer-border-radius;
+  @include text-shadow; // Aplicar sombra al texto
+  @include transition; // Aplicar transición
+
+  .redessociales {
+    padding: 10px;
+    h5 {
+      margin-top: 10px;
+    }
+    a {
+      color: $footer-text-color;
+      text-decoration: none;
+      margin: 10px; // Espacio entre los enlaces
+      @include text-shadow; // Aplicar sombra al texto
+      @include transition; // Aplicar transición
+
+      &:hover {
+        color: lighten($footer-text-color, 20%); // Cambiar el color al pasar el mouse
+      }
+    }
+    p {
+      margin-bottom: 0;
+    }
+    // Estilos para los enlaces
+    a + a {
+      margin-left: 20px; // Espacio entre los enlaces
+    }
+  }
+}
+
+// Estilos específicos para dispositivos móviles y tabletas
+@media (max-width: $mobile-breakpoint) {
+  // Estilos para el footer
+  footer {
+    .redessociales {
+      a {
+        margin: 5px; // Espacio entre los enlaces para dispositivos móviles
+      }
+    }
+  }
+}

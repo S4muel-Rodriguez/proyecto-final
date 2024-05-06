@@ -1,0 +1,329 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+}
+
+// Definición de colores
+$verde-oscuro: #005E3A;
+$verde-claro: #00A884;
+$negro: #000000;
+$blanco: #FFFFFF;
+
+// Mixin para las sombras
+@mixin sombra($color) {
+  box-shadow: 0 2px 5px rgba($color, 0.2);
+  
+}
+// Mixin para las animaciones
+@mixin animacion {
+  transition: all 0.3s ease;
+
+}
+
+// Extender la barra de navegación
+.barradenavegacion {
+  background-color: $negro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  @include sombra($negro);
+
+}
+
+// Estilo de los elementos de la barra de navegación
+ul {
+list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+
+  margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+  color: $blanco;
+  @include animacion;
+
+  &:hover {
+    color: $verde-claro;
+    text-decoration: none;
+  }
+}
+
+// Definición de colores
+$verde-oscuro: #005E3A;
+$verde-claro: #00A884;
+$negro: #040007;
+$blanco: #dfd4d4d3;
+$seagreen: seagreen;
+
+// Mixin para las animaciones
+@mixin animacion {
+  transition: color 2s ease;
+}
+
+// Mixin para las sombras
+@mixin sombra {
+  box-shadow: 2px 4px 5px rgba($negro, 1);
+}
+
+// Estilo de los títulos
+.titulos {
+  background-color: $seagreen;
+  text-align: center;
+  padding: 20px;
+  @include sombra;
+
+  h1, h2 {
+    color: $blanco;
+    @include animacion;
+    text-shadow: 2px 4px 5px rgba($negro, 1);
+  }
+}
+
+
+// Mixin para centrar el texto
+@mixin centrar-texto {
+    text-align: center;
+  }
+  
+  // Mixin para las animaciones
+  @mixin animacion {
+    transition: all 0.3s ease;
+  }
+  
+  // Estilo del texto
+  .texto {
+    @include centrar-texto;
+    padding: 20px;
+    font-size: 25px;
+    background-color: #005E3A;
+  
+    p {
+      color: $blanco;
+      @include animacion;
+      text-shadow: 1px 1px 2px rgba($negro, 1);
+    }
+  }
+  
+
+
+// Mixin para las sombras
+@mixin sombra {
+    box-shadow: 0 2px 5px rgba($negro, 0.2);
+  }
+  
+  // Mixin para las animaciones
+  @mixin animacion {
+    transition: all 0.3s ease;
+  }
+  
+  // Mixin para centrar contenido
+  @mixin centrar-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  // Estilo de las cards
+  section {
+    article {
+      display: flex;
+      justify-content: center; 
+      padding: 20px;
+      background-image: linear-gradient(to right,  rgba(235, 11, 11, 0.774) , rgb(91, 8, 168));
+  
+      .card {
+        margin: 50px; 
+        width: 40%; 
+        @include sombra;
+        @include animacion;
+        @include centrar-contenido;
+  
+        img {
+          max-width: 100%;
+          height: auto;
+          @include animacion;
+        }
+  
+        .card-body {
+          p.card-text {
+            @include centrar-contenido;
+            color: $negro;
+            text-shadow: 2px 4px 5px rgba($negro, 1);
+          }
+        }
+        }
+    }
+    }
+    
+
+
+.intereses_aspiraciones{
+    text-align: center; /* Centra el contenido */
+}
+
+.intereses_aspiraciones p {
+    animation: fadeIn 1s ease; /* Animación de desvanecimiento */
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 0px; /* Espacio alrededor del texto */
+    margin: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Opacidad inicial */
+    }
+    to {
+        opacity: 1; /* Opacidad final */
+    }
+}
+
+
+
+
+footer {
+    position: fixed;
+    bottom: 0px; 
+    width: 100%; 
+    padding: 10px;
+    margin: 0px;  
+    background-color: #020202; 
+    color: seagreen; 
+    text-align: center;
+    border-radius: 20px;  
+}
+
+.redessociales {
+    display: inline-block;  
+}
+
+.redessociales h3 {
+    margin-top: 0px; 
+}
+
+.redessociales a {
+    color: #fcfcfc; 
+    text-decoration: none;  
+    margin:  10px;  
+}
+
+.redessociales p {
+    margin-bottom: 0px; 
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  /* Ajustes generales */
+  body {
+      font-size: 14px; /* Tamaño de fuente más pequeño */
+      overflow-x: hidden; /* Evitar que la página se desborde horizontalmente */
+  }
+
+  /* Estilos de la barra de navegación */
+  .barradenavegacion {
+    padding: 10px; /* Reducción del espaciado */
+  }
+
+  ul {
+      flex-direction: column; /* Alinear elementos verticalmente */
+      text-align: center; /* Centrar el texto */
+      margin: 0; /* Eliminar el margen predeterminado */
+      padding: 0; /* Eliminar el relleno predeterminado */
+  }
+
+  li {
+      margin: 10px 0; /* Espaciado entre elementos */
+  }
+
+  /* Estilos de los títulos */
+  .titulos {
+      padding: 10px; /* Reducción del espaciado */
+  }
+
+  /* Estilos del texto */
+  .texto {
+      padding: 10px; /* Reducción del espaciado */
+      font-size: 16px; /* Ajuste del tamaño de fuente */
+  }
+
+  /* Estilos de las cards */
+  section article {
+      flex-direction: column; /* Alinear elementos verticalmente */
+  }
+
+  .card {
+      margin: 20px 0; /* Espaciado entre tarjetas */
+      width: 80%; /* Ancho de la tarjeta */
+  }
+
+   /* Estilos del pie de página */
+   footer {
+    padding: 5px; /* Reducción del espaciado */
+    position: fixed; /* Fijar el footer */
+    bottom: 0; /* Colocar el footer en la parte inferior */
+    width: 100%; /* Ancho completo */
+    background-color: #020202; /* Color de fondo */
+    color: seagreen; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    border-radius: 20px; /* Bordes redondeados */
+}
+}
+
+/* Estilos para tabletas */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Ajustes generales */
+  body {
+      font-size: 16px; /* Tamaño de fuente para tabletas */
+  }
+
+  /* Estilos de la barra de navegación */
+  .barradenavegacion {
+    padding: 20px; /* Espaciado aumentado */
+  }
+
+  ul {
+      flex-direction: row; /* Alinear elementos horizontalmente */
+      text-align: left; /* Alinear texto a la izquierda */
+  }
+
+  li {
+      margin: 0 20px; /* Espaciado entre elementos */
+  }
+
+  /* Estilos de los títulos */
+  .titulos {
+      padding: 20px; /* Espaciado aumentado */
+  }
+
+  /* Estilos del texto */
+  .texto {
+      padding: 20px; /* Espaciado aumentado */
+      font-size: 18px; /* Ajuste del tamaño de fuente para tabletas */
+  }
+
+  /* Estilos de las cards */
+  section article {
+      flex-direction: row; /* Alinear elementos horizontalmente */
+  }
+
+  .card {
+      margin: 0 20px; /* Espaciado entre tarjetas */
+      width: calc(50% - 40px); /* Ancho de la tarjeta, ajustado para dos columnas */
+  }
+
+  /* Estilos del pie de página */
+  footer {
+      padding: 20px; /* Espaciado aumentado */
+  }
+}
+
+
+
+
+
