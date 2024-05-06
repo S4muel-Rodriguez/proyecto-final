@@ -274,56 +274,72 @@ footer {
     border-radius: 20px; /* Bordes redondeados */
 }
 }
-
 /* Estilos para tabletas */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   /* Ajustes generales */
   body {
-      font-size: 16px; /* Tamaño de fuente para tabletas */
+    font-size: 16px; /* Tamaño de fuente para tabletas */
+    margin: 0; /* Eliminar el margen predeterminado del cuerpo */
+    padding: 0; /* Eliminar el relleno predeterminado del cuerpo */
   }
 
   /* Estilos de la barra de navegación */
   .barradenavegacion {
     padding: 20px; /* Espaciado aumentado */
+    background-color: #333; /* Color de fondo de la barra de navegación */
+    position: fixed; /* Fijar la barra de navegación en la parte superior */
+    width: 100%; /* Ancho completo */
+    z-index: 1000; /* Asegurar que la barra de navegación esté en la parte superior */
   }
 
   ul {
-      flex-direction: row; /* Alinear elementos horizontalmente */
-      text-align: left; /* Alinear texto a la izquierda */
+    list-style-type: none; /* Eliminar los marcadores de lista */
+    margin: 0; /* Eliminar el margen */
+    padding: 0; /* Eliminar el relleno */
+    display: flex; /* Alinear elementos horizontalmente */
+    justify-content: center; /* Centrar elementos */
   }
 
   li {
-      margin: 0 20px; /* Espaciado entre elementos */
+    margin: 0 10px; /* Espaciado entre elementos */
+  }
+
+  a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Eliminar subrayado de los enlaces */
+    padding: 10px 8px; /* Espaciado interno */
+    display: inline-block; /* Convertir en bloque */
+    font-size: 14px; /* Reducción del tamaño de fuente para enlaces */
   }
 
   /* Estilos de los títulos */
   .titulos {
-      padding: 20px; /* Espaciado aumentado */
+    padding: 20px; /* Espaciado aumentado */
+    text-align: center; /* Centrar títulos */
   }
 
   /* Estilos del texto */
   .texto {
-      padding: 20px; /* Espaciado aumentado */
-      font-size: 18px; /* Ajuste del tamaño de fuente para tabletas */
+    padding: 20px; /* Espaciado aumentado */
+    font-size: 16px; /* Ajuste del tamaño de fuente para tabletas */
   }
 
   /* Estilos de las cards */
-  section article {
-      flex-direction: row; /* Alinear elementos horizontalmente */
+  section {
+    display: flex; /* Alinear las cards */
+    flex-wrap: wrap; /* Permitir envoltura para múltiples columnas */
+    justify-content: space-around; /* Espacio uniforme entre las tarjetas */
+    padding: 20px 0; /* Espaciado superior e inferior */
   }
 
   .card {
-      margin: 0 20px; /* Espaciado entre tarjetas */
-      width: calc(50% - 40px); /* Ancho de la tarjeta, ajustado para dos columnas */
+    margin: 20px; /* Espaciado entre tarjetas */
+    width: calc(50% - 40px); /* Ancho de la tarjeta, ajustado para dos columnas */
   }
 
   /* Estilos del pie de página */
   footer {
-      padding: 20px; /* Espaciado aumentado */
+    padding: 20px; /* Espaciado aumentado */
+    text-align: center; /* Centrar contenido del pie de página */
   }
 }
-
-
-
-
-
